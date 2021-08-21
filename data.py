@@ -72,9 +72,9 @@ try:
                 mycursor = mydb.cursor()
                 result = mycursor.execute(mySql_Create_Table_Query)
                 print("Customers Table created successfully:- ")
-                mySql_insert_query = """INSERT INTO """ + Country + """ (Customer_Name,Customer_Id,Customer_Open_Date,Last_Consulted_Date,Vaccination_Type,Doctor_Consulted, State,Country,Postcode,Date_of_Birth,Active_Customer) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) """
+                insert_query = """INSERT INTO """ + Country + """ (Customer_Name,Customer_Id,Customer_Open_Date,Last_Consulted_Date,Vaccination_Type,Doctor_Consulted, State,Country,Postcode,Date_of_Birth,Active_Customer) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) """
                 mycursor = mydb.cursor()
-                result = mycursor.execute(mySql_insert_query, (
+                result = mycursor.execute(insert_query, (
                     list[2], list[3], list[4], list[5], list[6], list[7], list[8], list[9], list[10], list[11],
                     list[12]))
                 print(mycursor.rowcount, "Record inserted successfully into Customers table.")
